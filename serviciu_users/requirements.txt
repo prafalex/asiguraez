@@ -1,0 +1,14 @@
+Flask == 3.0.0
+Flask-SQLAlchemy==3.1.1
+psycopg2-binary==2.9.9
+requests==2.31.0
+DateTime==5.3
+Flask-Cors==4.0.0
+prometheus-flask-exporter==0.23.0
+gke-logging==0.0.5
+flask_bcrypt== 1.0.1
+flask_caching==2.1.0
+flask-limiter==3.5.1
+marshmallow==3.21.1
+talisman==0.1.0
+Flask-Login==0.6.3

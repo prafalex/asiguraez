@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serviciu-baza-de-date
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: serviciu-baza-de-date
+  template:
+    metadata:
+      labels:
+        app: serviciu-baza-de-date
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15
+          env:
+            - name: POSTGRES_PASSWORD
+              value: user123
+            - name: POSTGRES_USER
+              value: user
+            - name: POSTGRES_DB
+              value: db_asiguraez
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: pgdata
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: pgdata
+          emptyDir: {}
+
